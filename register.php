@@ -57,13 +57,12 @@ session_destroy();
               <?php
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['fname'])){
 
-                  $nameREGEX = "/\d[!@$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?#]+/";
-
                   if(isset($_POST['fname'])){
-                    if (preg_match($nameREGEX, $_POST['fname'])){
-                      echo "<p style='color:red !important'> You can't use special character or number </p>";
-                    } else {
+                    if (preg_match("/^([a-zA-Z' ]+)$/", $_POST['fname'])){
                       $fname = $_POST['fname'];
+                     
+                    } else {
+                      echo "<p style='color:red !important'> You can't use special character or number </p>";
                     }
                   }
 
@@ -85,13 +84,11 @@ session_destroy();
               <?php
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['mname'])){
 
-                  // $nameREGEX = "/\d[!@$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?#]+/";
-
                   if(isset($_POST['mname'])){
-                    if (preg_match("/\d[!@$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?#]+/", $_POST['mname'])){
-                      echo "<p style='color:red !important'> You can't use special character or number </p>";
-                    }else {
+                    if (preg_match("/^([a-zA-Z' ]+)$/", $_POST['mname'])){
                       $mname = $_POST['mname'];
+                    }else {
+                      echo "<p style='color:red !important'> You can't use special character or number </p>";
                     }
                   }
                 }
@@ -110,13 +107,11 @@ session_destroy();
               <?php
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['lname'])){
 
-                  $nameREGEX = "/\d[!@$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?#]+/";
-
                   if(isset($_POST['lname'])){
-                    if (preg_match($nameREGEX, $_POST['lname'])){
-                      echo "<p style='color:red !important'> You can't use special character or number </p>";
-                    }else {
+                    if (preg_match("/^([a-zA-Z' ]+)$/", $_POST['lname'])){
                       $lname = $_POST['lname'];
+                    }else {
+                      echo "<p style='color:red !important'> You can't use special character or number </p>";
                     }
                   }
                 }
@@ -136,13 +131,12 @@ session_destroy();
               <?php
                 if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['family'])){
 
-                  $nameREGEX = "/\d[!@$%^&*()_+\-=\[\]{};':\"\\|,.<>\/?#]+/";
-
                   if(isset($_POST['family'])){
-                    if (preg_match($nameREGEX, $_POST['family'])){
-                      echo "<p style='color:red !important'> You can't use special character or number </p>";
-                    }else {
+                    if (preg_match("/^([a-zA-Z' ]+)$/", $_POST['family'])){
                       $family = $_POST['family'];
+                    }else {
+                      echo "<p style='color:red !important'> You can't use special character or number </p>";
+                      
                     }
                   }
                 }
